@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="このサイトは役に立たない製品を製造する企業のホームページです。" />
+  <link rel="icon" href="https://item-shopping.c.yimg.jp/i/n/restt_rogo-00164" sizes="16×16" type="image/png" />  
+  <title>スターコーポレーション公式サイト</title>
+  <meta property="og:url" content ="https://starcorperation.w3spaces.com/newstar.html" />
+  <meta property="og:title" content="スターコーポレーション公式ホームページ" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="役に立たない製品を作る会社、スターコーポレーション。" />
+  <meta property="og.image" content="https://item-shopping.c.yimg.jp/i/n/restt_rogo-00164" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:site_name" content="スターコーポレーション公式サイト" />
+  <meta property="og:locale" content="ja_JP" />
+
+  <style>
+
+ /* --- トップへ戻るボタン（光る＋浮遊＋フェードイン＋脈動） --- */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 52px;
+    height: 52px;
+    background: rgba(255,255,255,0.1);
+    color: black;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.3s ease;
+
+    /* 浮遊アニメーション */
+    animation: floatUpDown 3.2s ease-in-out infinite,
+               pulseGlow 2.4s ease-in-out infinite;  /* ← ★追加 */
+    z-index: 999;
+}
+
+/* ホバー時：強めの光 */
+#backToTop:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 12px #81d5ff, 0 0 28px rgba(129,213,255,0.7);
+}
+
+/* 出現アニメ */
+#backToTop.show {
+    display: block;
+    opacity: 1;
+}
+
+/* 上下に浮遊 */
+@keyframes floatUpDown {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-7px); }
+    100% { transform: translateY(0); }
+}
+
+/* ★ 光がゆっくり脈打つアニメーション */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 4px rgba(129,213,255,0.2), 0 0 12px rgba(129,213,255,0.15);
+    }
+    50% {
+        box-shadow: 0 0 14px rgba(129,213,255,0.55), 0 0 28px rgba(129,213,255,0.4);
+    }
+    100% {
+        box-shadow: 0 0 4px rgba(129,213,255,0.2), 0 0 12px rgba(129,213,255,0.15);
+    }
+}
+
+
+    /* Reset */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Noto Sans JP", sans-serif;
+      background: #FFF;
+      color: #000;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h2.section-title {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+
+            .hero {
+           height: 80vh;
+           background: url("") center/cover no-repeat;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           text-align: center;
+           padding: 30px;
+       }
+       .hero h2 {
+           font-size: 2.4rem;
+           margin-bottom: 10px;
+           text-shadow: 0px 0px 12px rgba(255,255,255,0.6);
+       }
+       .hero p {
+           opacity: 0.8;
+           font-size: 1.2rem;
+       }
+
+       section {
+           padding: 80px 40px;
+           max-width: 1100px;
+           margin: 0 auto;
+       }
+       section h3 {
+           font-size: 1.8rem;
+           margin-bottom: 25px;
+           border-left: 4px solid #5ac8ff;
+           padding-left: 12px;
+       }
+
+
+       .product-list {
+           display: grid;
+           grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+           gap: 30px;
+       }
+       .product {
+           background: rgba(255,255,255,0.06);
+           padding: 20px;
+           border-radius: 12px;
+           transition: 0.2s;
+       }
+       .product:hover {
+           background: rgba(255,255,255,0.12);
+       }
+       .product img 
+       .service img { 
+           width: 70%;
+           border-radius: 10px;
+
+       .product img,
+       .service img {
+           width: 50%;
+           display: block;
+           margin: 0 auto;
+       }
+
+           
+       }
+       .product h4 {
+           margin: 15px 0 10px;
+           font-size: 1.1rem;
+       }
+       .product p {
+           opacity: 0.8;
+           font-size: 0.9rem;
+       }
+
+
+       .about-text {
+           opacity: 0.85;
+           font-size: 1rem;
+           line-height: 1.8;
+       }
+
+    /* Image unified size → same as 永眠くん */
+    .product img, .service img, .fixed-size-img {
+      width: 300px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px auto;
+      border-radius: 12px;
+      transition: transform 0.4s ease;
+    }
+
+    /* Hover zoom */
+    .product img:hover,
+    .service img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 1s ease;
+    }
+
+     
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+
+
+/*広告*/
+ .ad-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ad-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  .ad-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .ad-section p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+  }
+
+  .ad-button {
+    background-color: black;
+    color: #ff7e5f;
+    font-weight: bold;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .ad-button:hover {
+    background-color: #ffe0d1;
+    color: #ff5a36;
+  }
+
+  /*広告*/
+ .ad-section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   height: 400px;
+   width: 40;
+   background-image: linear-gradient(153deg, rgba(255, 0, 165, 1), rgba(191, 233, 255, 1));
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 20px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ad-section1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  .ad-section1 h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .ad-section1 p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+  }
+
+  .ad-button1 {
+    background-color: white;
+    color: #ff7e5f;
+    font-weight: bold;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .ad-button1:hover {
+    background-color: #ffe0d1;
+    color: #ff5a36;
+  }
+ 
+    .ad-section div {
+      flex: 1;
+      margin: 0 20px;
+    }
+
+    .ad-section1 div {
+        flex:1;
+        margin: 0 20px;
+        }
+  /* レスポンシブ対応 */
+  @media (min-width: 768px) {
+    .ad-section {
+      flex-direction: row;
+      text-align: left;
+      padding: 60px;
+    }
+
+    .ad-section div {
+      flex: 1;
+      margin: 0 20px;
+    }
+  }
+  </style>
+</head>
+    
+<body>
+
+    <div id="passwordScreen" style="
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+">
+  <h2 style="margin-bottom:20px;">パスワードを入力してください<br>じゃんけんしてる場合◯◯◯◯◯◯◯（ローマ字）</h2>
+  <input id="passInput" type="password" placeholder="password" style="
+    padding:10px 15px;
+    border-radius:8px;
+    border:none;
+    outline:none;
+    font-size:16px;
+    text-align:center;
+  ">
+  <button onclick="checkPassword()" style="
+    margin-top:15px;
+    padding:10px 25px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+  ">送信</button>
+
+  <p id="errorMsg" style="color:red; margin-top:10px;"></p>
+</div>
+
+
+    <header>
+       <h1>
+           <img src="https://item-shopping.c.yimg.jp/i/n/restt_rogo-00164" alt="ロゴ" height="50">
+           STAR CORPORATION
+       </h1>
+       <nav>
+           <a href="#notice">お知らせ</a>
+           <a href="#about">企業情報</a>
+           <a href="#rinen">営業理念</a>
+           <a href="#topic">トピック</a>
+           <a href="#history">会社の成り立ち</a>
+           <a href="#message">社長メッセージ</a>
+           <a href="#products">製品</a>
+           <a href="#s">サービス情報</a>
+           <a href="#password">入社希望</a>
+           <a href="#view">アンケート</a>
+           <a href="#idea">アイデア募集</a>
+       </nav>
+   </header>
+    
+  <div class="hero">
+    <div class="fade-in">
+    <h1>日常捨てろよ。</h1>        
+    <p>役に立たない製品しか作らない会社、スターコーポレーション。</p>
+    </div>    
+  </div>
+
+
+ <section id="notice">
+       <h3 class="fade-in">お知らせ</h3>
+       <p class="about-text">
+       <p class="fade-in">    
+            &emsp;2025年11月22日を持ちまして、<a href="https://novelstar354.github.io/ushioda/">このサイト</a>と<a href="https://novelstar354.github.io/player/">このサイト</a>を閉鎖いたします。皆様にはご不便をかけますが、ご理解、ご協力をお願いします。また、閉鎖後、どうしても見たいという人がいましたら、お近くのスターコーポレーション情報部門へご相談ください。<br>&emsp;黒を基調としたサイトは<a href="https://novelstar354.github.io/whstar2">こちら</a>。<br> &emsp;関係ないけどslido作りました。回答してね。<a href="https://app.sli.do/event/niF8WBZpfkUwdv2tAZCXeX/embed/polls/90627950-2dab-4486-9a81-a02cbb99c0d9">ここ</a>。
+       </p>
+   </section>  
+
+    
+    <section id="about">
+       <h3 class="fade-in">企業情報</h3>
+       <p class="about-text">
+       <p class="fade-in">    
+            &emsp;スターコーポレーションは、「役に立たない」を最高の価値と信じ、
+ あなたの人生にまったく貢献しない製品とサービスを提供し続ける企業です。
+世界は便利になりすぎました。
+ 私たちは、あえて不便を、あえて無意味を、あえて混乱を。
+ 非合理という名の星を、今日もあなたにお届けします。
+   <a href="https://novelstar354.github.io/star/">こちらのサイトもどうぞ</a>。
+
+       </p>
+   </section> 
+             
+ <section id="rinen">
+       <h3 class="fade-in">営業理念</h3>
+       　　<p class="about-text">
+           <p class="fade-in">  
+              &emsp;この企業は社長のスピーチより、「ゆりかごから墓場まで役に立たない製品を」という言葉を営業理念として大切にしています。</p>
+   </section>
+
+ 
+  
+
+   <section id="history">
+       <h3 class="fade-in">会社の成り立ち</h3>
+       <p class="about-text">
+       <p class="fade-in">
+           &emsp;スターコーポレーションは2025年、創業者・Novel Starにより設立されました。<br> &emsp;
+「役に立たないものを堂々と作る」という独自の理念を掲げ、初代「永眠くん」をはじめとした奇妙で魅力的な商品を展開してきました。<br> &emsp;
+
+2025年にはスローガン「日常捨てろよ。」が誕生し、以降“無意味の美しさ”を追求する製品群がSNSを中心に話題に。<br> &emsp;
+           
+2025年代には海外でも研究対象として取り上げられず、アートとも冗談ともつかない存在として評価されはじめていません。<br>
+ &emsp;
+現在も当社は、
+「役に立たないが、なぜか心に残るもの」
+を創り続ける唯一の企業として活動を続けています。
+　　　 </p>
+    </section>
+
+     <section id="topic">
+       <div class="fade-in">  
+       <h3 class="fade-in">トピック</h3>
+       <p class="about-text"> 
+           2025.11.13 創業<br>
+           2025.11.14 サイト創立<br>
+           2025.11.20 新・公式サイト創立<br>
+           2026.8.25 株価暴落<br>
+           
+           
+       </p>
+       </div>    
+     </section> 
+
+   <section id="message">
+       <h3 class="fade-in">代表メッセージ</h3>
+       <p class="about-text">
+       <p class="fade-in">
+           &emsp;「意味を求めると世界は狭くなる。だから僕たちは“無意味”を作り続ける。日常を捨てて、自由になれ。」<br><br> &emsp;
+           —— 社長 Novel Star
+       </p>
+   </section>
+
+    <section class="ad-section1 fade-in">
+  <div>
+    <h2>あなたは当選しています！！</h2>
+    <p> &emsp;フォームに答えるだけ！2分で100000円をゲットしよう！</p>
+    <a href="https://novelstar354.github.io/sagi" class="ad-button">詳細を見る</a>
+  </div>
+  <div>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcxztvUHMFCeJjqlBXdzM5Z4ZgMjYtSk6U1A&s" alt="広告イメージ" style="border-radius:12px; width:100%; max-width:300px;">
+  </div>
+</section>
+
+  <section>
+    <h2 class="section-title fade-in">製品</h2>
+
+    <div class="product fade-in">
+      <img src="https://m.media-amazon.com/images/I/814bK7P5DRL._AC_UF350,350_QL50_.jpg" alt="永眠くん" class="fixed-size-img" />
+      <h4>永眠くん</h4>
+      <p> &emsp;絶対に起きれない革命的目覚まし時計。人生をスヌーズしろ。</p>
+    </div>
+
+    <div class="product fade-in">
+      <img src="https://www.ayanokouji.co.jp/shop/item/kyoame/picture/goods/10_2.jpg" alt="製品1" class="fixed-size-img" />
+      <h4>無味キャンディー</h4>
+      <p> &emsp;味のないキャンディー。味についての哲学をあなたに。</p>
+    </div>
+
+    <div class="product fade-in">
+      <img src="https://jp.sharp/reizo/sjmf46h-design/images/main-visual_sp.jpg" alt="製品2" class="fixed-size-img" />
+      <h4>nothing smart 冷蔵庫</h4>
+      <p> &emsp;たまに温かくなる最新AI搭載。何もしないが、存在感はある。</p>
+    </div>
+
+　　<div class="service">
+         <img src="https://previews.123rf.com/images/badboo/badboo1104/badboo110400018/9378444-beautiful-view-out-of-a-modern-unfurnished-room.jpg" alt="">
+         <h4>透明家具シリーズ</h4>
+         <p> &emsp;見えない、座れない、ぶつかる。あなたの生活に刺激を。</p>
+   </div>
+
+     <div class="service">
+          <img src="https://www.muji.com/public/media/img/item/4550512076162_org.jpg">
+          <h4>縮むラーメン『シュリンク麺』</h4>
+          <p> &emsp;お湯をかけると縮むラーメン。小腹も満たせない。</p>
+    </div>  
+
+    <div class="service">
+        <img src="https://www.zojirushi-direct.com/client_info/ZOJIRUSHI_DIRECT/itemimage/EQSB22_BW/EQSB22_BW_01.png" alt="">
+        <h4>焼かないトースター</h4>
+        <p> &emsp;パンを入れると、ほんのり冷たくなる。<br>
+         &emsp;「焼かないという新提案」。</p>
+    </div>
+      
+ </section>
+
+  <section id="s">
+    <h2 class="section-title fade-in">サービス</h2>
+
+    <div class="service fade-in">
+      <img src="https://store-images.s-microsoft.com/image/apps.14785.14423064005243201.42399137-369b-40bb-b5be-ac2f079c41bf.b1d6d110-9d93-441f-ac20-2e04fd7dfe3c" alt="サービス1" class="fixed-size-img" />
+      <h4>最強のチャットAI:ネガポジ無双</h4>
+      <p> &emsp;ポジティブな言葉を全てネガティブに変換して返すチャットAI。<br>
+ &emsp; 例：「今日はいい天気だね」→「そう思い込まないと生きていけないんだね」<br> &emsp;サービスを利用したい方は<a href="https://novelstar354.github.io/ai/">こちら</a>。</p>
+    </div>
+
+     <div class="service">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDomKNQBdl3DOd2AW9KgS4bA__m9uJjljc0Q&s" alt"">
+        <h4>究極のアプリ：空もよう？</h4>
+         <p> &emsp;ランダムな天気を表示するお天気アプリです。<br> &emsp;明日の天気は運次第。いや、今日の天気も運次第。<br> &emsp;サービスを利用したい方は<a href="https://novelstar354.github.io/weather/">こちら</a>。
+         <p>
+    </div>
+      <div class="service">
+             <img src="https://png.pngtree.com/png-clipart/20230916/original/pngtree-google-translate-icon-three-dimensional-vector-png-image_12256679.png">
+             <h4>ランダム翻訳</h4>
+             <p> &emsp;日本語を日本語、英語、アラビア語、フランス語、キニアルワンダ語、セーシェル・クレオール語からランダムに翻訳します。使いたい方は<a href="https://novelstar354.github.io/he">こちら</a>。</p>
+         </div>   
+           <div class="service">
+             <img src="https://img.lovepik.com/png/20231120/google-translate-translation-icon-vector-artificial-software-deal-with_642881_wh860.png">
+             <h4>そのまま翻訳</h4>
+             <p> &emsp;日本語を日本語で返す翻訳機です。世界で1番、日本語の精度が高いです。使いたい方は<a href="https://novelstar354.github.io/she">こちら</a>。</p>
+     </div>    
+        <div class="service">
+         <img src="https://png.pngtree.com/png-clipart/20230922/original/pngtree-machine-translation-software-gradient-linear-vector-icon-dictionary-talk-multilingual-vector-png-image_12828475.png">
+         <h4>ちゃんとした翻訳</h4>
+         <p> &emsp;我が社には不必要なちゃんとした翻訳です。使いたい方は<a href="https://novelstar354.github.io/they">こちら</a>。</p>
+     </div>   
+       <div class="service">
+           <img src="https://img2.lancers.jp/proposal/2545174/83951/e689cf8a1ea0ef8e87942817ef50ee10d0e2334834716541acaba5e3ecfff908/3160012_300_0.jpg?20131003053200">
+           <h4>タイピング多分上達Opoタイピング</h4>
+           <p> &emsp;多分一応使える。使いたい方は<a href="https://novelstar354.github.io/pop">こちら</a>。</p>
+           </div>
+    <div class="service">
+      <img src="https://www.silhouette-illust.com/wp-content/uploads/2017/09/travel_odekake_38105-600x600.jpg" alt="">
+     <h4>最高の旅行代理店：ステイホームツアーズ</h4>
+    <p> &emsp;あなたに家への旅行を提供いたします。<br>   &emsp;※予約するとキャンセルされる可能性があります。<br> &emsp;サービスを利用したい方は<a href="https://novelstar354.github.io/stay/">こちら</a>。  <br> &emsp; 製品サイトは<a href="https://novelstar354.github.io/product-list/">こちら</a><br> &emsp;また、新しい製品サイトは<a href="https://novelstar354.github.io/product/">こちら</a>。
+    <p>
+    </div>   
+  
+  </section>
+
+<section class="ad-section fade-in">
+  <div>
+    <h2> &emsp;今だけ限定キャンペーン！ブラウザでいろんなゲームをプレイしよう！</h2>
+    <p>GAME HUB</p>
+    <a href="https://novelstar354.github.io/gamehub" class="ad-button">詳細を見る</a>
+  </div>
+  <div>
+    <img src="https://play-lh.googleusercontent.com/ZZuNL9nGkaqM9QH5MjqYJZXJtis_kbV70bjVx0HsXe7jLcJqPz2izczvFnXo4S6xCQ" alt="gamehub" style="border-radius:12px; width:100%; max-width:300px;">
+  </div>
+</section>
+         
+<section id="password">
+    <h3 class="fade-in">入社希望</h3>
+
+    <form class="fade-in" action="https://script.google.com/a/macros/hongo.ed.jp/s/AKfycbzSluFAbTmkCNQ6FFl6o98YnnXHM17YrShJx3MdhQvMq9xfvA4iMXOfTfOtqZ1qcLOV/exec" method="post">
+
+        <p>あなたの名前: 
+            <input type="text" name="yourname" placeholder="Novel Star" required>
+        </p>
+
+        <p>メールアドレス:
+            <input type="email" name="mailaddress" placeholder="novelstar@gmail.com" required>
+        </p>
+
+        <p>パスワード:
+            <input type="password" name="password" required>
+        </p>
+
+        <p>質問や備考:
+            <input type="text" name="bikoubiko" placeholder="ない場合はなしと書いてください。" required>
+        </p>
+
+        <p>
+            <input type="submit" name="submit" value="送信">
+        </p>
+
+    </form>
+</section>
+
+        
+<section id="view">
+    <h3 class="fade-in">アンケート</h3>
+
+    <form class="fade-in" action="https://script.google.com/a/macros/hongo.ed.jp/s/AKfycbzl9EyOxJ6RanloQgWvGZGja5JhXubwVbdKhE-j2D1cRaiaT98BK9rkqiFc6nn9wJCV/exec" method="post">
+
+        <p>あなたの名前:
+            <input type="text" name="yourname" placeholder="Novel Star" required>
+        </p>
+
+        <p>このサイトと
+            <a href="https:/https://script.google.com/a/macros/hongo.ed.jp/s/AKfycbzoMwzT2HDV8NxteZizeM11flOHoKFT8IDFpYvXKDMILLzgnktSHMinpekl9vkBzSz8/exec/novelstar354.github.io/star/">古いサイト</a>
+            のどちらが良いか：
+            <input type="text" name="answer" placeholder="例：新しいサイト" required>
+        </p>
+
+        <p>備考:
+            <input type="text" name="bikou" placeholder="ない場合はなし" required>
+        </p>
+
+        <p>
+            <input type="submit" name="submit" value="送信">
+        </p>
+
+    </form>
+</section>
+
+        
+<section id="idea">
+    <h3 class="fade-in">アイデア募集</h3>
+
+    <form class="fade-in" action="https://script.google.com/a/macros/hongo.ed.jp/s/AKfycbzbND3ltfaNyRS1wDgOtot_oWM6jETpXF6JTkuK5VLIomGJNNotbyK2HlU-4PiQcuyC/exec" method="post">
+
+        <h4>もしかしたら採用するかもしれません</h4>
+
+        <p>
+            あなたの名前:<br>
+            <input type="text" name="yourname" placeholder="Novel Star" required>
+        </p>
+
+        <p>
+            商品またはサービスの名前:<br>
+            <input type="text" name="idea" placeholder="例：永眠くん" required>
+        </p>
+
+        <p>
+            商品の効果や説明:<br>
+            <input type="text" name="explain" placeholder="絶対に起きれない" required>
+        </p>
+
+        <p>
+            <input type="submit" name="submit" value="送信">
+        </p>
+
+    </form>
+</section>
+
+ <button id="backToTop">▲</button>
+
+
+
+
+
+
+  <footer class="fade-in">
+    © 2025 Star Corporation. All Rights Reserved.
+  </footer> 
+
+ <script>
+  function checkPassword() {
+    const correct = "tyaunen"; // ← パスワード変更OK
+    const input = document.getElementById("passInput").value;
+    const err = document.getElementById("errorMsg");
+
+    if (input === correct) {
+      document.getElementById("passwordScreen").style.display = "none"; 
+    } else {
+      err.textContent = "パスワードが違います。";
+    }
+  }
+
+  /* Scroll animation */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  /* Back to Top */
+
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add("show");   // フェードイン
+    } else {
+      backToTop.classList.remove("show"); // フェードアウト
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+
+
+        
+</body>
+</html>
