@@ -346,6 +346,139 @@
       margin: 0 20px;
     }
   }
+/* ハンバーガーメニュー */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.menu-btn span {
+  display: block;  width: 22px;
+  height: 2px;
+  background: #000;
+  margin: 6px auto;
+  transition: 0.3s;
+}
+
+/* ナビを隠す（スマホ用） */
+nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 260px;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  padding: 80px 20px;
+  transition: 0.4s;
+  z-index: 999;
+}
+
+nav a {
+  display: white;
+  color: #fff;
+  text-decoration: none;
+  margin: 15px 0;
+  font-size: 1.1rem;
+}
+
+/* 表示状態 */
+nav.open {
+  right: 0;
+}
+
+/* PCでは常に表示 */
+  nav a {
+    display: inline-block;
+    margin: 0;
+  }
+}
+/* ===== 光るハンバーガー ===== */
+.menu-btn {
+  box-shadow: 0 0 10px rgba(80,160,255,0.6);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.menu-btn:hover {
+  box-shadow: 0 0 18px rgba(120,200,255,0.9);
+}
+
+/* × に変形 */
+.menu-btn.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* span共通 */
+.menu-btn span {
+  transition: 0.35s;
+}
+
+/* ===== 背景オーバーレイ ===== */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 998;
+}
+
+.menu-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* nav は overlay より上 */
+nav {
+  width: min(85vw, 420px);
+  right: -420px;
+}
+
+
+/* ===== PCでは大きくする ===== */
+@media (min-width: 900px) {
+  .menu-btn {
+    width: 56px;
+    height: 56px;
+    top: 24px;
+    right: 24px;
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(120,200,255,0.8);
+  }
+
+  .menu-btn span {
+    width: 30px;
+    height: 3px;
+    margin: 8px auto;
+  }
+
+  /* ×の変形位置も調整 */
+  .menu-btn.active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+  }
+
+  .menu-btn.active span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+  }
+}
   </style>
 </head>
     
@@ -385,7 +518,7 @@
 </div>
 
 
-    <header>
+   <header>
        <h1>
            <img src="https://item-shopping.c.yimg.jp/i/n/restt_rogo-00164" alt="ロゴ" height="50">
            STAR CORPORATION
@@ -402,6 +535,13 @@
            <a href="#password">入社希望</a>
            <a href="#view">アンケート</a>
            <a href="#idea">アイデア募集</a>
+           <!-- ハンバーガーボタン -->
+<button id="menuBtn" class="menu-btn">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
        </nav>
    </header>
     
@@ -734,6 +874,32 @@
       top: 0,
       behavior: "smooth"
     });
+  });
+    const menuBtn = document.getElementById("menuBtn");
+  const nav = document.querySelector("nav");
+  const overlay = document.getElementById("menuOverlay");
+
+  function openMenu() {
+    nav.classList.add("open");
+    menuBtn.classList.add("active");
+    overlay.classList.add("show");
+  }
+
+  function closeMenu() {
+    nav.classList.remove("open");
+    menuBtn.classList.remove("active");
+    overlay.classList.remove("show");
+  }
+
+  menuBtn.addEventListener("click", () => {
+    nav.classList.contains("open") ? closeMenu() : openMenu();
+  });
+
+  overlay.addEventListener("click", closeMenu);
+
+  // メニューを押したら閉じる
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
   });
 </script>
 
