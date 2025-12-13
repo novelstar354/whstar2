@@ -479,6 +479,45 @@ nav {
     transform: translateY(-11px) rotate(-45deg);
   }
 }
+/* ===== ナビ文字を巨大化 ===== */
+nav.open a {
+  font-size: 1.5rem;
+}
+
+/* ===== ナビ文字：初期状態 ===== */
+nav li {
+  opacity: 0;
+  transform: translateX(30px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+nav.open li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+nav.open li:nth-child(1) { transition-delay: 0.05s; }
+nav.open li:nth-child(2) { transition-delay: 0.12s; }
+nav.open li:nth-child(3) { transition-delay: 0.19s; }
+nav.open li:nth-child(4) { transition-delay: 0.26s; }
+nav.open li:nth-child(5) { transition-delay: 0.33s; }
+nav.open li:nth-child(6) { transition-delay: 0.40s; }
+nav.open li:nth-child(7) { transition-delay: 0.47s; }
+nav.open li:nth-child(8) { transition-delay: 0.54s; }
+nav.open li:nth-child(9) { transition-delay: 0.61s; }
+nav.open li:nth-child(10) { transition-delay: 0.68s; }
+nav.open li:nth-child(11) { transition-delay: 0.75s; }
+
+      nav li {
+  transform: translateY(20px);
+}
+
+      nav li {
+  transition: opacity 0.4s ease,
+              transform 0.4s cubic-bezier(.2,1.4,.4,1);
+}
   </style>
 </head>
     
@@ -518,23 +557,28 @@ nav {
 </div>
 
 
-   <header>
+  <!-- 背景オーバーレイ -->
+<div id="menuOverlay" class="menu-overlay"></div>
+
+    <header>
        <h1>
            <img src="https://item-shopping.c.yimg.jp/i/n/restt_rogo-00164" alt="ロゴ" height="50">
            STAR CORPORATION
        </h1>
        <nav>
-           <a href="#notice">お知らせ<br></a>
-           <a href="#about">企業情報<br></a>
-           <a href="#rinen">営業理念<br></a>
-           <a href="#history">会社の成り立ち<br></a>
-           <a href="#topic">トピック<br></a>
-           <a href="#message">社長メッセージ<br></a>
-           <a href="#products">製品<br></a>
-           <a href="#s">サービス情報<br></a>
-           <a href="#password">入社希望<br></a>
-           <a href="#view">アンケート<br></a>
-           <a href="#idea">アイデア募集<br></a>
+           <ul>
+           <li><a href="#notice">お知らせ</a></li>
+           <li><a href="#about">企業情報</a></li>
+           <li><a href="#rinen">営業理念</a></li>
+           <li><a href="#history">会社の成り立ち</a></li>
+           <li><a href="#topic">トピック</a></li>
+           <li><a href="#message">社長メッセージ</a></li>
+           <li><a href="#products">製品</a></li>
+           <li><a href="#s">サービス情報</a></li>
+           <li><a href="#password">入社希望</a></li>
+           <li><a href="#view">アンケート</a></li>
+           <li><a href="#idea">アイデア募集</a></li>
+        </ul>
            <!-- ハンバーガーボタン -->
 <button id="menuBtn" class="menu-btn">
   <span></span>
