@@ -285,7 +285,7 @@
     justify-content: center;
    height: 400px;
    width: 40;
-   background-image: linear-gradient(153deg, rgba(255, 0, 165, 1), rgba(191, 233, 255, 1));
+   background-image: linear-gradient(178deg, rgba(99, 23, 128, 1), rgba(48, 53, 97, 1));
     color: white;
     padding: 60px 20px;
     text-align: center;
@@ -330,6 +330,63 @@
     }
 
     .ad-section1 div {
+        flex:1;
+        margin: 0 20px;
+        }
+
+       /*広告2*/
+ .ad-section2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   height: 400px;
+   width: 40;
+   background-image: linear-gradient(178deg, rgba(99, 23, 128, 1), rgba(48, 53, 97, 1));
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 20px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ad-section2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  .ad-section2 h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .ad-section2 p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+  }
+
+  .ad-button2 {
+    background-color: white;
+    color: #ff7e5f;
+    font-weight: bold;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .ad-button2:hover {
+    background-color: #ffe0d1;
+    color: #ff5a36;
+  }
+ 
+    .ad-section2 div {
+      flex: 1;
+      margin: 0 20px;
+    }
+
+    .ad-section2 div {
         flex:1;
         margin: 0 20px;
         }
@@ -722,6 +779,17 @@ nav.open li:nth-child(11) { transition-delay: 0.75s; }
         <p> &emsp;パンを入れると、ほんのり冷たくなる。<br>
          &emsp;「焼かないという新提案」。</p>
     </div>
+
+      <section class="ad-section fade-in">
+  <div>
+    <h2> &emsp;今だけ限定キャンペーン！ブラウザでいろんなゲームをプレイしよう！</h2>
+    <p>GAME HUB</p>
+    <a href="https://novelstar354.github.io/gamehub" class="ad-button">詳細を見る</a>
+  </div>
+  <div>
+    <img src="https://play-lh.googleusercontent.com/ZZuNL9nGkaqM9QH5MjqYJZXJtis_kbV70bjVx0HsXe7jLcJqPz2izczvFnXo4S6xCQ" alt="gamehub" style="border-radius:12px; width:100%; max-width:300px;">
+  </div>
+</section>
       
  </section>
 
@@ -766,14 +834,14 @@ nav.open li:nth-child(11) { transition-delay: 0.75s; }
   
   </section>
 
-<section class="ad-section fade-in">
+ <section class="ad-section2 fade-in">
   <div>
-    <h2> &emsp;今だけ限定キャンペーン！ブラウザでいろんなゲームをプレイしよう！</h2>
-    <p>GAME HUB</p>
-    <a href="https://novelstar354.github.io/gamehub" class="ad-button">詳細を見る</a>
+    <h2>ウイルス感染を感知しました！</h2>
+    <p> &emsp;あなたのデバイスで、多数のウイルスを感知しました。今すぐスキャンして、ウイルスを除去しましよう１</p>
+    <a href="https://novelstar354.github.io/virus" class="ad-button">詳細を見る</a>
   </div>
   <div>
-    <img src="https://play-lh.googleusercontent.com/ZZuNL9nGkaqM9QH5MjqYJZXJtis_kbV70bjVx0HsXe7jLcJqPz2izczvFnXo4S6xCQ" alt="gamehub" style="border-radius:12px; width:100%; max-width:300px;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNipAIM0slrIlHT2DuZ7e42-Au-aQ4_grQVw&s" alt="広告イメージ" style="border-radius:12px; width:100%; max-width:300px;">
   </div>
 </section>
          
